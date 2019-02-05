@@ -79,8 +79,7 @@
   text-align: center;
 }
 
-#portfolio-flters li, button {
-  border: 0;
+#portfolio-flters li {
   cursor: pointer;
   margin: 15px 20px 15px 10px;
   display: inline-block;
@@ -97,11 +96,6 @@
 }
 
 #portfolio-flters li:hover{
-  background: #BFDAEF;
-  color: #fff;
-}
-
-#portfolio-flters button:hover{
   background: #BFDAEF;
   color: #fff;
 }
@@ -155,10 +149,7 @@
           display:inline-block;
           background:#fff!important;
 /*          border-radius:50%;*/
-          opacity:1;
-           visibility: visible;
           margin-left:2%;
-          transition: all 1s linear;
 
 /*            border-radius: 15px 50px 30px;*/
         }
@@ -334,67 +325,6 @@
 
 }
 
-@media screen and (max-width: 654px)
-{
-  .thisbtn {
-    display: block;
-    width: 80%;
-    margin-left: 10%!important;
-    margin-top: 20px!important;
-  }
-
-  #portfolio-flters {
-    height: 0px;
-    transition: 300ms linear all!important;
-  }
-
-  ul#portfolio-flters li {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 655px)
-{
-  .thisbtn {
-    display: none!important;
-  }
-
-  #portfolio-flters {
-    display: block!important;
-    height: auto;
-    margin-top: 20px!important;
-  }
-
-  ul#portfolio-flters li {
-    display: inline!important;
-  }
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 70px;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px!important;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-
 </style>
 @section('title')
   Our Team
@@ -432,35 +362,14 @@
 		</div> -->
     <div class="row">
       <div class="col-lg-12">
-        <button type="button" name="button" class="btn btn-primary thisbtn" style="margin: 0 auto;" onclick="hides()">Team</button>
         <ul id="portfolio-flters">
-          <li onclick="cardAll()">All</li>
-          <li onclick="cardfilter('man')">MANAGEMENT</li>
-          <li>
-          <div class="dropdown">
-            <button>MERCHANDISING & P.D</button>
-            <div class="dropdown-content">
-              <a onclick="cardfilter('mer')" href="#">Link 1</a>
-              <a onclick="cardfilter('mer')" href="#">Link 2</a>
-              <a onclick="cardfilter('mer')" href="#">Link 3</a>
-            </div>
-          </div>
-          </li>
-          <li onclick="cardfilter('fin')">FINANCE & PLANNING</li>
-          <li>
-          <div class="dropdown">
-            <button>QAA <b class="caret"></b></button>
-            <div class="dropdown-content">
-              <a onclick="cardfilter('mer')" href="#">Link 1</a>
-              <a onclick="cardfilter('mer')" href="#">Link 2</a>
-              <a onclick="cardfilter('mer')" href="#">Link 3</a>
-            </div>
-          </div>
-          </li>
-          <!-- <li onclick="cardfilter('qaa')">QAA</li> -->
-          <li onclick="cardfilter('sam')">SAMPLE PATTERN & P.D</li>
-          <li onclick="cardfilter('hra')">HR & ADMIN</li>
-          <li onclick="cardfilter('sew')">SEW FREE</li>
+          <li data-filter="*" class="filter-active">MANAGEMENT</li>
+          <li data-filter=".filter-app">MERCHANDISING & P.D</li>
+          <li data-filter=".filter-card">FINANCE & PLANNING</li>
+          <li data-filter=".filter-web">QAA</li>
+          <li data-filter=".filter-web">SAMPLE PATTERN & P.D</li>
+          <li data-filter=".filter-web">HR & ADMIN</li>
+          <li data-filter=".filter-web">SEW FREE</li>
         </ul>
       </div>
     </div>
@@ -502,7 +411,7 @@
         </div>
       </div> -->
         <section id="team">
-        <div class="card border-0 mer">
+        <div class="card card border-0 filter-app">
           <img src="img/CEO.jpg" alt="Emon" />
           <div class="data">
             <h2>Md. Taufikul Ahsan</h2>
@@ -511,7 +420,7 @@
           </div>
         </div>
 
-        <div class="card border-0 fin">
+        <div class="card card border-0">
           <img src="img/emon.jpg" alt="Emon" />
           <div class="data ">
             <h2>Mr. Emon</h2>
@@ -586,42 +495,3 @@
   </div>
 </div>
 @endsection
-
-<script type="text/javascript">
-  var x = 1;
-  function cardfilter(cardName)
-  {
-    var cardfilt = document.getElementsByClassName(cardName);
-    var cards = document.getElementsByClassName('card');
-
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.display = "none";
-    }
-
-    for (var i = 0; i < cardfilt.length; i++) {
-      cardfilt[i].style.display = "";
-    }
-  }
-
-  function cardAll()
-  {
-    var cards = document.getElementsByClassName('card');
-
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.display = "";
-    }
-  }
-
-  function hides()
-  {
-    if (x == 1) {
-      document.getElementById('portfolio-flters').style.height = "320px";
-      x = 0;
-    } else {
-      document.getElementById('portfolio-flters').style.height = "0px";
-      x = 1;
-    }
-
-  }
-
-</script>

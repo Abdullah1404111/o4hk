@@ -26,7 +26,13 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
-
+  <style>
+    #footer {
+      clear: both!important;
+      float: none!important;
+      overflow: auto!important;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,40 +61,6 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li> -->
-
-          @if (Route::has('login'))
-                @auth
-                    <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="{{ route('logout') }}" style="color: black; text-align: center; display: block; padding-top: 9px;">
-                            Profile
-                        </a>
-
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();" style="color: black; text-align: center; display: block;padding-top: 9px;">
-                            {{ __('Logout') }}
-                        </a>
-
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-
-                    @if (Route::has('register'))
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                    @endif
-                @endauth
-        @endif
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

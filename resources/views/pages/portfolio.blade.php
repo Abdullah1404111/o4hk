@@ -1,5 +1,32 @@
 @extends('layouts.app')
+<style>
+img{ max-width:100%;}
 
+.gal_box li{ width:33.333333%; max-width: 100%; display:inline-block; float: left; text-align: center; overflow: hidden;    position: relative;}
+.gal_box{ padding:0;display: flow-root;}
+
+.gal_box li:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.gal_box li img{-webkit-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;}
+.gal_box li:nth-child(even) {
+  height: 304px;
+}
+.gal_box li:nth-child(odd) {
+  height: 438px;
+}
+.gal_box li:nth-child(odd) .box_data{ background:rgba(0,0,0,0.17) }
+.gal_box li:nth-child(even) .box_data{ background:rgba(0,44,255,0.27) }
+.gal_box .box_data{ position:absolute; top: 0; left: 0; right:0; bottom:0; color:#fff;}
+.gal_box .box_data span{ position:absolute; top: 50%; transform: translateY(-50%); left:0 ; right:0; font-size:24px;}
+.gal_box li:hover .box_data{ background:rgba(255,0,39,0.55)}
+</style>
 @section('title')
   Portfolio
 @endsection
@@ -34,145 +61,47 @@
         </div>
       </div>
 
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Pant 1</a></h4>
-              <p>Pant</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">T-shirt 3</a></h4>
-              <p>T-shirt</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Pant 2</a></h4>
-              <p>Pant</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Jacket 2</a></h4>
-              <p>Jacket</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">T-shirt 2</a></h4>
-              <p>T-shirt</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Pant 3</a></h4>
-              <p>Pant</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Jacket 1</a></h4>
-              <p>Jacket</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">Jacket 3</a></h4>
-              <p>Jacket</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-          <div class="portfolio-wrap">
-            <figure>
-              <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
-              <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-              <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-            </figure>
-
-            <div class="portfolio-info">
-              <h4><a href="#">T-Shirt 1</a></h4>
-              <p>T-Shirt</p>
-            </div>
-          </div>
-        </div>
-
+      <div class="row">
+        <ul class="gal_box">
+        	<li>
+        		<a href="#0"><img src="https://picsum.photos/600/700/?random">
+        		<div class="box_data">
+        			<span>Ravi With Bike</span>
+        		</div></a>
+        	</li>
+        		<li>
+        		<a href="#0"><img src="https://picsum.photos/600/701/?random">
+        		<div class="box_data">
+        			<span>Ravi Singh</span>
+        		</div></a>
+        	</li>
+        		<li>
+        		<a href="#0"><img src="https://picsum.photos/600/702/?random">
+        		<div class="box_data">
+        			<span>White wall</span>
+        		</div></a>
+        	</li>
+        			<li>
+        		<a href="#0"><img src="https://picsum.photos/600/703/?random">
+        		<div class="box_data">
+        			<span>Green Tree</span>
+        		</div></a>
+        	</li>
+        			<li style="    position: relative;
+            top: -134px;">
+        		<a href="#0"><img src="https://picsum.photos/600/704/?random">
+        		<div class="box_data">
+        			<span>Blue</span>
+        		</div></a>
+        	</li>
+        			<li>
+        		<a href="#0"><img src="https://picsum.photos/600/705/?random">
+        		<div class="box_data">
+        			<span>Ravi</span>
+        		</div></a>
+        	</li>
+        </ul>
       </div>
-
     </div>
   </section><!-- #portfolio -->
 

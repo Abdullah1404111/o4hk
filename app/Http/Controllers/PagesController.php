@@ -25,7 +25,8 @@ class PagesController extends Controller
 
   public function team()
   {
-    $members = Product::all();
+    $members = Product::orderBy('sort_val', 'ASC')->get();
+    
     return view('pages.team', compact('members'));
   }
 
