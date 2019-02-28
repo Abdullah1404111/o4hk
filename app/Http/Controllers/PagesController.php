@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Partner;
 use DB;
 use Illuminate\Http\Request;
 
@@ -20,13 +21,29 @@ class PagesController extends Controller
 
   public function portfolio()
   {
-    return view('pages.portfolio');
+    $partners = Partner::all();
+    return view('pages.portfolio', compact('partners'));
+  }
+
+  public function portfolio_show($p_id)
+  {
+    $products = DB::table('things')->where('partner_id', $p_id)->get();
+
+    return view('pages.things', compact('products'));
+
+  }
+
+  public function show_prod_details($p_id)
+  {
+    $product = DB::table('things')->where('thing_id', $p_id)->first();
+
+    return view('pages.view_thing', compact('product'));
   }
 
   public function team()
   {
-    $members = Product::orderBy('sort_val', 'ASC')->get();
-    
+    $members = Product::orderBy('order_cat', 'ASC')->get();
+
     return view('pages.team', compact('members'));
   }
 

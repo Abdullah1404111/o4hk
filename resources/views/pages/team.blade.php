@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
@@ -93,6 +94,7 @@
   background: #fff;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
+    width:100%:
 
 }
 
@@ -140,12 +142,22 @@
 
         }
         #team{
+/*
           display:flex;
           flex-wrap: wrap;
           flex-grow:3;
+*/
           background:#fff!important;
         }
-        .card {
+               #team1{
+
+          display:flex;
+          flex-wrap: wrap;
+          flex-grow:3;
+
+          background:#fff!important;
+        }
+       .card {
           width:31%;
           min-width: 200px;
           height: 330px;
@@ -155,13 +167,27 @@
           display:inline-block;
           background:#fff!important;
 /*          border-radius:50%;*/
-          opacity:1;
-           visibility: visible;
           margin-left:2%;
-          transition: all 1s linear;
+          margin:5px auto;
 
 /*            border-radius: 15px 50px 30px;*/
         }
+
+        .card1 {
+           width:31%;
+           min-width: 200px;
+           height: 330px;
+           overflow: hidden;
+           position: relative;
+           /*margin:0 .3% 3% 0;*/
+           display:inline-block;
+           background:#fff!important;
+ /*          border-radius:50%;*/
+           margin-left:2%;
+           margin:5px auto;
+
+ /*            border-radius: 15px 50px 30px;*/
+         }
 
 
 
@@ -169,9 +195,18 @@
           width: 250px;
           height:250px;
           transition:all 1s;
-            border-radius:50%;
-            margin:0 auto;
+          border-radius:50%;
+          margin:0 auto;
         }
+
+        .card1 img {
+          width: 250px;
+          height:250px;
+          transition:all 1s;
+          border-radius:50%;
+          margin:0 auto;
+        }
+
         .card:hover img{
 
             transform: rotate(45deg) translate(130px,140px);
@@ -209,6 +244,16 @@
 
         }
 
+        .card1:hover .data {
+          width: 50%;
+          height: 80%;
+          opacity: 0.9;
+          padding:50px 10%;
+          border:5px solid #BBBBBB;
+          border-radius: 50%;
+
+        }
+
         .data h2 {
           margin: 0 0 5px 0;
           transition:color 0.4s;
@@ -235,16 +280,28 @@
             width:80%;
             margin: 10% auto;
         }
+
         .data a{
-          color:black;
+          color:white;
           text-decoration:none;
-          padding:20px;
-          opacity:.1;
-          font-size: 2em;
+
+          opacity:0;
+          border-radius:4px;
         }
+      .card:hover .data a{
+          font-size: 20px;
+            padding: 5px;
+           color:black;
+          text-decoration:none;
+          background:lightgreen;
+          opacity:1;
+          border-radius:4px;
+      }
         .data a:hover,.card:hover h2{
           color:#38c;
         }
+        i{
+        display:block;}
 
     /*Media query for screens(480-767)*/
 
@@ -378,17 +435,24 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 70px;
+  width:100%;
   z-index: 1;
+    background: antiquewhite;
+    opacity: ;
+
 }
 
 .dropdown-content a {
   color: black;
-  padding: 10px!important;
+  padding: 5px!important;
   text-decoration: none;
   display: block;
+    width:100%;
+    border-radius: 4px;
 }
-
+      i{
+          display: block;
+      }
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
@@ -415,21 +479,11 @@
   ============================-->
 <!--
       <h1 class="teams">O͆u͆r͆ T͆e͆a͆m͆ 🅾🆄🆁 🆃🅴🅰🅼</h1>-->
-       <h1 class="teams"> 🅾🆄🆁 🆃🅴🅰🅼</h1>
+       <!--<h1 class="teams"> 🅾🆄🆁 🆃🅴🅰🅼</h1>-->
+       <header class="section-header">
+        <h3 class="section-title">Our Team</h3>
+      </header>
 
-	    <!-- <div class="topnav" id="myTopnav">
-		  <a href="#home">MANAGEMENT</a>
-		  <a href="#news">MERCHANDISING & P.D</a>
-		  <a href="#contact">FINANCE & PLANNING</a>
-		  <a href="#about">QAA</a>
-		  <a href="#about">SAMPLE PATTERN & P.D</a>
-		  <a href="#about">HR & ADMIN</a>
-		  <a href="#about">SEW FREE</a>
-
-		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-		    <i class="fa fa-bars"></i>
-		  </a>
-		</div> -->
     <div class="row">
       <div class="col-lg-12">
         <button type="button" name="button" class="btn btn-primary thisbtn" style="margin: 0 auto;" onclick="hides()">Team</button>
@@ -440,24 +494,24 @@
           <div class="dropdown">
             <button>MERCHANDISING & P.D</button>
             <div class="dropdown-content">
-              <a onclick="cardfilter('mer')" href="#">Link 1</a>
-              <a onclick="cardfilter('mer')" href="#">Link 2</a>
-              <a onclick="cardfilter('mer')" href="#">Link 3</a>
+              <a onclick="cardfilter('div1')" href="#">Division 1</a>
+              <a onclick="cardfilter('div2')" href="#">Division 2</a>
+              <a onclick="cardfilter('mer')" href="#">Division 3</a>
             </div>
           </div>
           </li>
           <li onclick="cardfilter('fin')">FINANCE & PLANNING</li>
           <li>
           <div class="dropdown">
-            <button>QAA <b class="caret"></b></button>
+            <button style="width:100px;">QAA<b class="caret"></b></button>
             <div class="dropdown-content">
-              <a onclick="cardfilter('mer')" href="#">Link 1</a>
-              <a onclick="cardfilter('mer')" href="#">Link 2</a>
-              <a onclick="cardfilter('mer')" href="#">Link 3</a>
+              <a onclick="cardfilter('qaa')" href="#">INLINE</a>
+              <a onclick="cardfilter('qaa')" href="#">INHOUSE</a>
+              <a onclick="cardfilter('qaa')" href="#">FRI</a>
             </div>
           </div>
           </li>
-          <!-- <li onclick="cardfilter('qaa')">QAA</li> -->
+
           <li onclick="cardfilter('sam')">SAMPLE PATTERN & P.D</li>
           <li onclick="cardfilter('hra')">HR & ADMIN</li>
           <li onclick="cardfilter('sew')">SEW FREE</li>
@@ -467,98 +521,33 @@
 
         <div class="row">
         <div class="col-lg-12">
-          <!-- <ul id="portfolio-flters">
 
-            <li data-filter=".filter-app">Management</li>
+        <section id="team1">
+        @foreach($members as $member)
+        @if($member->order_cat == "aaaa")
+          <div class="card1 border-0 col-md-12 {{ $member->sorting_cat }}">
+        @else
+          <div class="card border-0 {{ $member->sorting_cat }}">
+        @endif
 
-             <li class="dropdown">
-                <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
-                   Merchandising & P.D
-                   <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="listbox" >
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala1" role="option">Division 1</a></li>
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala2" role="option">Division 2</a></li>
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala3" role="option">Division 3</a></li>
-                </ul>
-             </li>
-            <li data-filter=".filter-web">Finance & Planning</li>
-            <li data-filter=".filter-web">QAA</li>
-            <li class="dropdown">
-                <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
-                   QAA
-                   <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="listbox" >
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala1" role="option">In-Line</a></li>
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala2" role="option">In-House</a></li>
-                   <li style="margin:0;padding:10px; width:100%;text-align:center;"><a href="#lala3" role="option">FRI</a></li>
-                </ul>
-             </li>
-            <li data-filter=".filter-web">Sample Pattern & P.D</li>
-            <li data-filter=".filter-web">HR & Admin</li>
-              <li data-filter=".filter-web">Sew Free</li>
-          </ul>
-        </div>
-      </div> -->
-        <section id="team">
-        <div class="card border-0 mer">
-          <img src="img/CEO.jpg" alt="Emon" />
+          <img src="{{ $member->product_image }}" alt="{{ $member->nick_name }}" />
           <div class="data">
-            <h2>Md. Taufikul Ahsan</h2>
-            <i>CEO</i>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#taufik" style="outline: none;">View Details</button>
+            <h2>{{ $member->user_name }}</h2>
+            <i>{{ $member->designation }}</i>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ $member->nick_name }}" style="outline: none;">View Details</button>
+
           </div>
         </div>
-
-        <div class="card border-0 fin">
-          <img src="img/emon.jpg" alt="Emon" />
-          <div class="data ">
-            <h2>Mr. Emon</h2>
-            <i>Website Developer</i>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="outline: none;">View Details</button>
-          </div>
-        </div>
-
+        @endforeach
         </section>
 
 
 
 </main>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg" style="position:relative;">
-    <!-- Modal content-->
-    <div class="modal-content" style="text-align: center; ">
-      <button type="button" class="close" data-dismiss="modal" style="background: #00A1EF; padding: 15px 18px; color: white; border-radius: 48%; position:absolute; top: -5px; right:-10px; opacity: 1; z-index: 1000;">&times;</button>
-        <div class="row">
-        <div class="lefts col-lg-5 col-md-5 col-sm-12" style="background: black; color: white; padding-top: 20px;">
-          <img src="img/emon.jpg" alt="Mr. Emon" style="width: 70%; padding-top: 10px; height:auto; border-radius: 50%;">
-          <div class="soc-link">
-            <!-- <h3 style="background: #555; margin-top: 25px; border-radius: 40px; padding: 10px;">Follow Me on Twitter</h3> -->
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-linkedin"></a>
-          </div>
-        </div>
-        <div class="rights col-lg-7 col-md-7 col-sm-12" style="margin-top: 25px;">
-          <h2 style="text-align: left; margin-bottom: 5px; float: left; font-weight: 700;color: #000;">Md. Mostofa Kamal</h2>
-          <p style="text-align: left; clear: both;">Website Developer</p>
-          <div style="height: 400px; overflow-y: scroll;">
-          <p style="text-align:left">Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.
-          Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.
-        Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.Lorem ipsum dolor sit amet consectetur adipiscing elit Etiam sedesmi. Consectetur elit placerat mollis donec dolor.</p>
-        </div>
-        </div>
-      </div>
-
-  </div>
-  </div>
-</div>
-
 
 <!-- Modal -->
-<div id="taufik" class="modal fade" role="dialog">
+@foreach($members as $member)
+<div id="{{ $member->nick_name }}" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg" style="position:relative;">
     <!-- Modal content-->
     <div class="modal-content" style="text-align: center; ">
@@ -574,10 +563,10 @@
           </div>
         </div>
         <div class="rights col-lg-7 col-md-7 col-sm-12" style="margin-top: 25px;">
-          <h2 style="text-align: left; margin-bottom: 5px; float: left; font-weight: 1000; color: #000;">Md. Taufikul Ahsan</h2>
-          <p style="text-align: left; clear: both;">Chief Executive Officer</p>
+          <h2 style="text-align: left; margin-bottom: 5px; float: left; font-weight: 1000; color: #000;">{{ $member->user_name }}</h2>
+          <p style="text-align: left; clear: both;">{{ $member->designation }}</p>
           <div style="height: 400px; overflow-y: scroll;">
-          <p style="text-align: left;">This firm is brain child dream of Mohammed Taufik Ahsan who is the founder of this company and also CEO and President. About this firm Mr. Ahsan said that, “Capitalizing my last 18 + years of experience in Apparel Manufacturing, Product Development, Innovation and Marketing thenI took on a new challenge and have established October4 HK Ltd He also said that, Things are Going Great and exactly as planned at O4HL, i have one of the best team in the industry and i am so proud of my team. yes some time they make mistakes when they are doing something for the first time but the best part is i managed to let them learn from it. He said, Myself and the entire team are fully convinced and motivated than ever to be able to do even better, and we know that our best are yet to come.” About the timeline of this firm, Mr. Ahsan said- “before established O4HL, I was hired by the US based leading Seam tape and Sewfree Adhesives manufacturer Bemis as to utilize my manufacturing and production development experience to bring a different dynamic to their whole marketing process."</p>
+          <p style="text-align: left;">{{ $member->user_details }}</p>
         </div>
         </div>
       </div>
@@ -585,6 +574,9 @@
   </div>
   </div>
 </div>
+@endforeach
+            <!--Modal Ends Here-->
+
 @endsection
 
 <script type="text/javascript">

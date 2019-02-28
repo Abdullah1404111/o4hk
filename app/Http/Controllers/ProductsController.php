@@ -33,11 +33,17 @@ class ProductsController extends Controller
     $this->AdminAuthCheck();
     $data = array();
 
-    $data['product_name'] = $request->product_name;
-    $data['product_size'] = $request->product_size;
-    $data['department'] = $request->department;
-    $data['hire_date'] = $request->hire_date;
-    $data['email'] = $request->email;
+    $data['user_name'] = $request->product_name;
+    $data['nick_name'] = $request->nick_name;
+    $data['designation'] = $request->product_size;
+    $data['user_details'] = $request->udetails;
+    $data['skype'] = $request->skype;
+    $data['twitter'] = $request->twitter;
+    $data['linkedin'] = $request->linkedin;
+    $data['t_link'] = $request->tlink;
+    $data['sorting_cat'] = $request->sort;
+    $data['order_cat'] = $request->order;
+
     if ($request->hasFile('product_image')) {
       $image = $request->file('product_image');
       $filename = time().'.'.$image->getClientOriginalExtension();
@@ -56,6 +62,7 @@ class ProductsController extends Controller
                   DB::table('products')->insert($data);
                   Session::put('message', 'Product Added successfully without any image!!');
                   return Redirect::to('/all_team');
+
   }
   // ***************************
   public function edit($p_id)

@@ -1,6 +1,6 @@
 @extends('admin_layout')
 @section('title')
-All Team Members
+All Team Partners
 @endsection
 
 @section('admin_content')
@@ -19,26 +19,24 @@ All Team Members
       <table class="table table-responsive table-striped table-bordered bootstrap-datatable datatable">
         <thead>
           <tr>
-            <th>Member Id</th>
-            <th>Member Name</th>
-            <th>Member Designation</th>
-            <th>Member Image</th>
+            <th>Partner Id</th>
+            <th>Partner Name</th>
+            <th>Partner Designation</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-        @foreach($products as $product)
+        @foreach($partners as $partner)
         <tr>
-          <td>{{ $product->user_id }}</td>
-          <td>{{ $product->user_name }}</td>
-          <td>{{ $product->designation }}</td>
-          <td><img class="img-responsive" style='max-height=200px; max-width=200px;' src="{{ $product->product_image }}" alt="product image"></td>
+          <td>{{ $partner->partner_id }}</td>
+          <td>{{ $partner->partner_name }}</td>
+          <td><img class="img-responsive" style='height=100px; width=100px;' src="{{ $partner->partner_img }}" alt="partner image"></td>
           <td class="center">
-            <a class="btn btn-info" href='/edit_product/{{ $product->p_id}}'>
+            <a class="btn btn-info" href='/edit_partner/{{ $partner->partner_id}}'>
               <i class="halflings-icon white edit"></i>
             </a>
             <!-- **************** -->
-            <a class="btn btn-danger" href='/delete_product/{{ $product->p_id}}' id="delete"><i class="halflings-icon white trash"></i></a>
+            <a class="btn btn-danger" href='/delete_partner/{{ $partner->partner_id}}' id="delete"><i class="halflings-icon white trash"></i></a>
           </td>
         </tr>
         @endforeach

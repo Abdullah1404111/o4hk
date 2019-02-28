@@ -21,7 +21,7 @@
 	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	
+
 	<!-- end: CSS -->
 
 
@@ -340,6 +340,10 @@
 						<li><a href="{{URL::to('/dashboard')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>
 						<li><a href="{{URL::to('/all_team')}}"><span class="glyphicon glyphicon-eye-open"></span><span class="hidden-tablet"> All Team Members</span></a></li>
 						<li><a href="{{URL::to('/add_team')}}"><span class="glyphicon glyphicon-plus"></span><span class="hidden-tablet"> Add Team Members</span></a></li>
+						<li><a href="{{URL::to('/all_partners')}}"><span class="glyphicon glyphicon-eye-open"></span><span class="hidden-tablet"> All Partenrs</span></a></li>
+						<li><a href="{{URL::to('/add_partner')}}"><span class="glyphicon glyphicon-plus"></span><span class="hidden-tablet"> Add Partner</span></a></li>
+						<li><a href="{{URL::to('/all_products')}}"><span class="glyphicon glyphicon-eye-open"></span><span class="hidden-tablet"> All Product</span></a></li>
+						<li><a href="{{URL::to('/add_product')}}"><span class="glyphicon glyphicon-plus"></span><span class="hidden-tablet"> Add Product</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -393,7 +397,7 @@
 	<footer>
 
 		<p>
-			<span style="text-align:left;float:left">&copy; 2019 
+			<span style="text-align:left;float:left">&copy; 2019
 			<a href="https://www.facebook.com/mkemon13">Kamal Emon</a></span>
 			<span class="hidden-phone" style="text-align:right;float:right">Powered by: <a href="http://www.facebook.com" alt="Bootstrap Admin Templates">Octobor4HK</a></span>
 		</p>

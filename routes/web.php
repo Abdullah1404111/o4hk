@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/about_us', "PagesController@about_us");
 Route::get('/services', "PagesController@services");
 Route::get('/portfolio', "PagesController@portfolio");
+Route::get('/portfolio/{p_id?}', "PagesController@portfolio_show");
 Route::get('/team', "PagesController@team");
 Route::get('/contact_us', "PagesController@contact_us");
 
@@ -42,6 +43,28 @@ Route::post('/edit_product', 'ProductsController@update');
 Route::get('/delete_product/{product_id?}', 'ProductsController@delete');
 Route::get('/view_member/{product_id?}', 'PagesController@show_member_details');
 
+
+// Partners
+Route::get('/all_partners', 'PartnersController@index');
+Route::get('/add_partner', 'PartnersController@create');
+Route::post('/add_partner', 'PartnersController@store');
+Route::get('/edit_partner/{p_id?}', 'PartnersController@edit');
+Route::post('/edit_partner', 'PartnersController@update');
+Route::get('/delete_partner/{p_id?}', 'PartnersController@delete');
+Route::get('/view_partner/{p_id?}', 'PartnersController@show_member_details');
+
+// Products of Partners
+
+Route::get('/all_products', 'ThingsController@index');
+Route::get('/add_product', 'ThingsController@create');
+Route::post('/add_product', 'ThingsController@store');
+Route::get('/edit_product/{p_id?}', 'ThingsController@edit');
+Route::post('/edit_product', 'ThingsController@update');
+Route::get('/delete_prod/{p_id?}', 'ThingsController@delete');
+Route::get('/view_product/{p_id?}', 'ThingsController@show_member_details');
+
+// View Partners Product
+Route::get('/thing/{p_id?}', 'PagesController@show_prod_details');
 
 Auth::routes();
 

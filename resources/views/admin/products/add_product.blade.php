@@ -17,6 +17,13 @@ Add Member
         </div>
 
         <div class="control-group">
+          <label class="control-label" for="date01">Member Nick Name</label>
+          <div class="controls">
+          <input type="text" class="input-xlarge" name="nick_name" required>
+          </div>
+        </div>
+
+        <div class="control-group">
           <label class="control-label" for="date01">Member Designation</label>
           <div class="controls">
           <input type="text" class="input-xlarge" name="product_size" required>
@@ -31,16 +38,51 @@ Add Member
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="date01">Hire date:</label>
+          <label class="control-label" for="date01">Sorting Category:</label>
           <div class="controls">
-          <input style="height: 30px;" type="date" class="input-xlarge" name="hire_date">
+          <input type="text" class="input-xlarge" name="sort">
           </div>
         </div>
 
         <div class="control-group">
-          <label class="control-label" for="date01">Email:</label>
+          <label class="control-label" for="date01">Ordering Category:</label>
           <div class="controls">
-          <input type="text" class="input-xlarge" name="email">
+          <input type="text" class="input-xlarge" name="order">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="date01">Skype:</label>
+          <div class="controls">
+          <input type="text" class="input-xlarge" name="skype">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="date01">Twitter:</label>
+          <div class="controls">
+          <input type="text" class="input-xlarge" name="twitter">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="date01">Linkedin:</label>
+          <div class="controls">
+          <input type="text" class="input-xlarge" name="linkedin">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="date01">Team Link:</label>
+          <div class="controls">
+          <input type="text" class="input-xlarge" name="tlink">
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="date01">User Details:</label>
+          <div class="controls">
+          <textarea class="input-xlarge" name="udetails"></textarea>
           </div>
         </div>
 
