@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team</title>
+</head>
+<style>
+
+    /* Initialisation */
+html,body{
+  display:block;
+  width:100%;
+  height:100%;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+  font-family:"Raleway","Quicksand","Open Sans",sans-serif;
+}
+html{ 
+  background-color:rgb(114,193,232);
+  background:linear-gradient(315deg,
+  rgba(114,193,232,0.72),
+  rgba(28,129,252,0.7)70%),
+    }
+h2 {
+    margin: 0;
+    text-align: center;
+    line-height: 100px;
+    font-family:"Raleway","Quicksand","Open Sans",sans-serif;
+    font-size: 22pt;
+    font-weight: bold;
+    color: white;
+}
+    
+#our_team{
+}
+#our_team .contents{text-align:center;}
+#container{
+    display:inline-block;
+    vertical-align:top;
+    border-left:solid 1px #FFF;
+    border-right:solid 1px #FFF;
+    position:relative; /* Pour placer les boutons en absolu */
+    width:900px;
+    height:270px;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+#container ul{
+    margin:0;
+    padding:0;
+    height:100%;
+    list-style:none;
+    display:table;
+    table-layout:fixed;
+}
+#container ul li{display:table-cell;}
+/*
+#prec,#suiv{
+    display:inline-block;
+    width:35px;
+    height:300px;
+    vertical-align:top;
+    cursor:pointer
+}
+*/
+/*
+#prec{box-shadow: inset -10px 0px 10px -10px rgba(100, 100, 100, 0.5);}
+#suiv{box-shadow: inset 11px 0px 10px -10px rgba(100, 100, 100, 0.5);}
+*/
+/*
+#prec span,#suiv span{
+    display:block;
+    width:18px;
+    height:38px;
+    margin-top: 110px;
+    background:url('//vincentrocher.fr/codepen/images/sprites/sprite1.png')
+      no-repeat;
+}
+*/
+/*
+#prec span{background-position:-270px 0;}
+#suiv span{background-position:-288px 0;margin-left:15px;}
+*/
+
+.person{
+    display:inline-block;
+    position:relative;
+    width:200px;
+    height:200px;
+    margin:0 10px;
+    cursor:pointer;
+    vertical-align:top;
+}
+.person.inf4 {
+    margin-bottom: 50px;
+}
+.person > div{
+    width:100%;
+    height:100%;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    border: 12px solid rgba(28,129,252,0.8);
+    box-shadow: 2px 2px 2px rgba(0,0,0, 0.18);
+    text-align:center;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+    box-sizing:border-box;
+    transition:all 0.5s;
+}
+.person img{
+    height:100%;
+    margin:0 -0%;
+    transition: all 0.5s ease;
+}
+.person.larg img{
+    height:auto;
+    width:100%;
+    margin:-100% -50%;
+}
+.person > div span {
+    background:rgba(28,129,252,0.9);
+    position:absolute;
+    z-index:0;
+    top:130px;
+    left:0px;
+    padding: 5px 20px 5px 40px;
+    color:#FFF;
+    font-weight:400;
+    font-size:14px;
+    border-radius: 0 13px 13px 0;
+    transition: all 0.5s ease-in;
+}
+.person:hover > div span{display:none}
+.person:hover img{height:105%;}
+.person.larg:hover img{height:auto;width:105%;margin:-105% -50%;}
+.person:hover > div { border: 12px solid rgba(28,129,252,0.5);}
+.person h3 {margin-top:17px;color:#FFF;}
+
+
+
+
+
+
+
+/* Media - Queries - Responsive */
+@media screen and (max-width: 1000px) {
+    #our_team .contents{padding:50px 5px;text-align:center;}
+    #container{width:660px;}
+}
+@media screen and (max-width: 780px) {
+    #container{width:440px;} 
+}
+@media screen and (max-width: 530px) {
+    #container{width:220px;}
+}
+@media screen and (max-width: 320px) {
+    #our_team .contents{zoom:73% !important;}
+    
+}
+    
+</style>
+
+<body>
+    <div id="our_team" class="partie">
+  <div class="separation">
+    <h2>Our Team</h2>
+  </div>
+  <div class="contents">
+<!--    <div id="prec"><span></span></div>-->
+    <div id="container">
+      <ul style="margin-left: -220px;">
+        <li>
+          <div class="person larg" data-id="26">
+            <div>
+              <img src="emon.jpg">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="28">
+            <div>
+              <img src="1.png"><span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="24">
+            <div>
+              <img src="2.png">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="25">
+            <div>
+              <img src="3.png">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="23">
+            <div>
+              <img src="4.png">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="22">
+            <div>
+              <img src="5.jpg">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+        <li>
+          <div class="person" data-id="27">
+            <div>
+              <img src="6.png">
+              <span>Dev</span>
+            </div>
+            <h3>Mostofa Kamal</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+<!--    <div id="suiv"><span></span></div>-->
+</div>
+
+</body>
+</html>

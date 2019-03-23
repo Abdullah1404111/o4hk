@@ -36,8 +36,9 @@ class PagesController extends Controller
   public function show_prod_details($p_id)
   {
     $product = DB::table('things')->where('thing_id', $p_id)->first();
-
-    return view('pages.view_thing', compact('product'));
+    $brands = DB::table('partners')->where('partner_id', $product->partner_id)->get();
+    $product_image = DB::table('products_images')->where('product_id', $p_id)->first();
+    return view('pages.view_thing', compact('product', 'brands', 'product_image'));
   }
 
   public function team()

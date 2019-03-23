@@ -57,6 +57,8 @@ Route::get('/view_partner/{p_id?}', 'PartnersController@show_member_details');
 
 Route::get('/all_products', 'ThingsController@index');
 Route::get('/add_product', 'ThingsController@create');
+Route::get('/add_product_img/{t_id?}', 'ThingsController@add_images');
+Route::post('/add_product_images', 'ThingsController@store_images');
 Route::post('/add_product', 'ThingsController@store');
 Route::get('/edit_product/{p_id?}', 'ThingsController@edit');
 Route::post('/edit_product', 'ThingsController@update');

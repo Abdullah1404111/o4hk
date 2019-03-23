@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>portfolio page</title>
+</head>
+<style>
+ * {box-sizing: border-box;}
+
+.container {
+  position: relative;
+
+}
+#photos{
+            line-height: 0;
+            -webkit-column-count: 3;
+            -webkit-column-gap: 5px;
+            -moz-column-count: 3;
+            -moz-column-gap: 5px;
+            column-count: 3;
+            column-gap: 5px;
+            
+    }
+
+ #photos img{
+            width:100% !important;
+            
+            margin-bottom:5px;
+            
+        }
+.overlay {
+  position: absolute; 
+  bottom: 2px; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: paleturquoise;
+  font-size: 26px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}   
+    </style>
+<body>
+<section id="photos">
+    
+
+<div class="container">
+  <img src="public/img/portfolio/001.JPG" alt="Avatar" >
+  <div class="overlay"><b>Mosko Moto</b></div>
+</div>
+<div class="container">
+  <img src="public/img/portfolio/001.JPG" alt="Avatar" >
+  <div class="overlay"><b>Mosko Moto</b></div>
+</div>
+<div class="container">
+  <img src="public/img/portfolio/001.JPG" alt="Avatar">
+  <div class="overlay"><b>Mosko Moto</b></div>
+</div>
+</section>
+</body>
+</html>

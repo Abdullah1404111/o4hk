@@ -51,7 +51,7 @@ class thingsController extends Controller
     }
   }
 
-  public function edit($p_id)
+  public function edit($p_id) // 9
   {
     $this->AdminAuthCheck();
     $thing = Thing::where('thing_id', $p_id)->first();
@@ -76,6 +76,7 @@ class thingsController extends Controller
       $thingUpdate->update([
           'thing_name' => $request->input('thing_name'),
           'thing_image' => $image_url,
+          'partner_id' => $request->partner_id,
       ]);
 
 
@@ -109,21 +110,86 @@ class thingsController extends Controller
     return Redirect::to('/all_products');
   }
 
+  public function add_images($t_id)
+  {
+    $this->AdminAuthCheck();
+    return view('admin.things.add_images', compact('t_id'));
+  }
+
+  public function store_images(Request $request)
+  {
+    $this->AdminAuthCheck();
+    $data = array();
+
+    $data['product_id'] = $request->product_id;
+
+    if ($request->hasFile('image1')) {
+      $image = $request->file('image1');
+      $filename = time().'1.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+      if ($success) {
+        $data['image1'] = $image_url;
+      }
+    }
+
+    if ($request->hasFile('image2')) {
+      $image = $request->file('image2');
+      $filename = time().'2.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+      if ($success) {
+        $data['image2'] = $image_url;
+      }
+    }
 
 
+    if ($request->hasFile('image3')) {
+      $image = $request->file('image3');
+      $filename = time().'3.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+      if ($success) {
+        $data['image3'] = $image_url;
+      }
+    }
 
+    if ($request->hasFile('image4')) {
+      $image = $request->file('image4');
+      $filename = time().'.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+      if ($success) {
+        $data['image4'] = $image_url;
+      }
+    }
 
+    if ($request->hasFile('image5')) {
+      $image = $request->file('image5');
+      $filename = time().'.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+      if ($success) {
+        $data['image5'] = $image_url;
+      }
+    }
 
+    if ($request->hasFile('image6')) {
+      $image = $request->file('image6');
+      $filename = time().'.'.$image->getClientOriginalExtension();
+      $success = Image::make($image)->resize(268, 249)->save( public_path('/img/prod_surroun_images/'.$filename));
+      $image_url = '/img/prod_surroun_images/'.$filename;
+    }
 
+    $data['image6'] = $image_url;
+    DB::table('products_images')->insert($data);
+    Session::put('message', 'Product Added successfully!');
+    return Redirect::to('/all_products');
+    
+    // Session::put('message', 'Product Added successfully without any image!!');
+    // return Redirect::to('/all_products');
 
-
-
-
-
-
-
-
-
+  }
 
 
   public function AdminAuthCheck()

@@ -37,6 +37,7 @@ All Products
             </a>
             <!-- **************** -->
             <a class="btn btn-danger" href='/delete_prod/{{ $thing->thing_id}}' id="delete"><i class="halflings-icon white trash"></i></a>
+            <a class="btn btn-danger" href='/add_product_img/{{ $thing->thing_id}}' id="addImg">Img</i></a>
           </td>
         </tr>
         @endforeach
